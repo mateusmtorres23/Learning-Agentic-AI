@@ -1,6 +1,6 @@
 # Learning-IA
 
-My personal journey into Artificial Intelligence and Machine Learning. This repository serves as a collection of projects and experiments as I explore different technologies and concepts in the AI space.
+My personal journey into AI agents. This repository serves as a collection of projects and experiments as I explore different technologies and concepts in the agentic AI space.
 
 
 
@@ -10,6 +10,7 @@ Here are some of the key libraries and frameworks I've been working with:
 
 * **LangChain:** For building applications powered by language models, focusing on component modularity.
 * **LangGraph:** For creating stateful, multi-step agentic systems with cyclical and branching logic.
+* **Google ADK:** Testing Google's framework for building AI
 
 
 
