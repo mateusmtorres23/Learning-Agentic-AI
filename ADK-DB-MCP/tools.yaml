@@ -1,0 +1,28 @@
+sources:
+  postgres_docker:
+    kind: postgres
+    host: localhost
+    port: 5432
+    user: admin
+    password: admin
+    database: bank
+
+tools:
+  amount_based_search:
+    kind: postgres-sql
+    source: postgres_docker
+    description: Search for transactions in the database based on various criteria.
+    parameters:
+      - name: amount
+        type: integer
+        description: The minimum transaction amount to filter the transactions.
+    statement: |
+      SELECT COUNT(*) AS transaction_count 
+      FROM transactions t
+      WHERE t.amount > $1
+
+toolsets:
+  selects:
+    description: A set of tools for performing select queries on the database.
+    tools:
+      - amount_based_search
