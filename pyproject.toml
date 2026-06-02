@@ -13,6 +13,7 @@ dependencies = [
     "langchain-community>=0.4.2",
     "langchain-google-genai>=4.2.3",
     "langchain-text-splitters>=1.1.2",
+    "py-trello>=0.20.1",
     "pymupdf>=1.27.2.3",
     "python-dotenv>=1.2.2",
     "toolbox-core>=1.1.0",
