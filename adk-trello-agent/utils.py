@@ -30,6 +30,8 @@ def find_task_card(task_name: str) -> Optional[Card]:
             (c for c in cards if c.name == task_name),
             None
         )
-        task_card = card if card else None
+        if card :
+            task_card = card
+            break
 
     return task_card
