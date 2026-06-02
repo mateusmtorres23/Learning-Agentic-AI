@@ -7,7 +7,7 @@ def add_task(task_name: str, task_description: str, due_date: str):
     todo_list.add_card(name=task_name, desc=task_description, due=due_date)
 
 def list_tasks():
-    task_board = trello_task_board
+    task_board = trello_task_board()
 
     tasks = []
     for lst in task_board.list_lists():

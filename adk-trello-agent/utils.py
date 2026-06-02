@@ -23,11 +23,13 @@ def find_task_card(task_name: str) -> Optional[Card]:
     task_board = trello_task_board()
     lists = task_board.list_lists()
 
+    task_card = None
     for l in lists:
-            cards = l.list_cards()
-            task_card = next(
-                (c for c in cards if c.name == task_name),
-                None
-            )
+        cards = l.list_cards()
+        card = next(
+            (c for c in cards if c.name == task_name),
+            None
+        )
+        task_card = card if card else None
 
     return task_card
