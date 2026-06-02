@@ -27,19 +27,18 @@ def change_task_status(task_name:str, new_status:str) -> str:
             'done' : 'Done'
         }
 
-        new_status_list = status_map.get(new_status.lower())
+        new_status_name = status_map.get(new_status.lower())
 
-        if not new_status_list:
+        if not new_status_name:
             return 'Invalid status: use "to do", "in progress" or "done"'
         
         new_task_list = next(
-            (l for l in lists if l.name.upper() == new_status_list.upper()),
+            (l for l in lists if l.name.upper() == new_status_name.upper()),
             None
         )
 
-        if not new_status_list:
-            return f'The list {new_status_list} was not found'
-
+        if not new_task_list:
+            return f'The list {new_task_list} was not found'
         
         task_card = find_task_card(task_name)
 
@@ -47,7 +46,7 @@ def change_task_status(task_name:str, new_status:str) -> str:
             return f"The task {task_name} was not found try listing the tasks to find the correct one"
 
         task_card.change_list(new_task_list)
-        return f'Task {task_name} is now {new_status_list}'
+        return f'Task {task_name} is now {new_task_list}'
     
     except Exception as e:
         return f'error: {e}'
