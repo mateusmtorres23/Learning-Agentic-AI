@@ -38,7 +38,7 @@ def change_task_status(task_name:str, new_status:str) -> str:
         )
 
         if not new_task_list:
-            return f'The list {new_task_list} was not found'
+            return f'The list {new_status} was not found'
         
         task_card = find_task_card(task_name)
 
@@ -46,7 +46,7 @@ def change_task_status(task_name:str, new_status:str) -> str:
             return f"The task {task_name} was not found try listing the tasks to find the correct one"
 
         task_card.change_list(new_task_list)
-        return f'Task {task_name} is now {new_task_list}'
+        return f'Task {task_name} is now {new_task_list.name}'
     
     except Exception as e:
         return f'error: {e}'
