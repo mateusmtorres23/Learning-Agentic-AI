@@ -1,4 +1,4 @@
-from utils import trello_task_board, find_task_card
+from .utils import trello_task_board, find_task_card
 
 def add_task(task_name: str, task_description: str, due_date: str):
     task_board = trello_task_board()
@@ -45,7 +45,7 @@ def change_task_status(task_name:str, new_status:str) -> str:
         if not task_card:
             return f"The task {task_name} was not found try listing the tasks to find the correct one"
 
-        task_card.change_list(new_task_list)
+        task_card.change_list(new_task_list.id)
         return f'Task {task_name} is now {new_task_list.name}'
     
     except Exception as e:

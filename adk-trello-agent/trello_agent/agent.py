@@ -1,6 +1,6 @@
 from google.adk.agents.llm_agent import Agent
 from datetime import datetime
-from trello_services import add_task, list_tasks, change_task_status, remove_task
+from .trello_services import add_task, list_tasks, change_task_status, remove_task
 
 def get_temporal_context() -> str:
     now = datetime.now()
